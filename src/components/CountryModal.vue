@@ -1,26 +1,47 @@
 <template>
   <div class="modal-overlay text-black">
     <div class="modal">
-      <span class="close" @click="closeModal">&times;</span>
+      <div class="modal-header">
+        <div class="text-2xl">Country Description</div>
+        <div class="close" @click="closeModal">&times;</div>
+      </div>
+
       <div class="modal-content">
         <img :src="currentCountry.flags.png" alt="Flag" class="country-flag" />
-        <h2>{{ currentCountry.name.common }}</h2>
-        <div><strong>Official Name:</strong> {{ currentCountry.name.official }}</div>
-        <div><strong>Capital:</strong> {{ currentCountry.capital[0] }}</div>
-        <div><strong>Region:</strong> {{ currentCountry.region }}</div>
-        <div><strong>Subregion:</strong> {{ currentCountry.subregion }}</div>
-        <div><strong>Population:</strong> {{ currentCountry.population.toLocaleString() }}</div>
-        <div><strong>Latitude & Longitude:</strong> {{ currentCountry.latlng.join(', ') }}</div>
+        <h2>{{ currentCountry.name.common ? currentCountry.name.common : '' }}</h2>
+        <div>
+          <strong>Official Name:</strong>
+          {{ currentCountry.name.official ? currentCountry.name.official : '' }}
+        </div>
+        <div>
+          <strong>Capital:</strong> {{ currentCountry.capital[0] ? currentCountry.capital[0] : '' }}
+        </div>
+        <div><strong>Region:</strong> {{ currentCountry.region ? currentCountry.region : '' }}</div>
+        <div>
+          <strong>Subregion:</strong> {{ currentCountry.subregion ? currentCountry.subregion : '' }}
+        </div>
+        <div>
+          <strong>Population:</strong>
+          {{
+            currentCountry.population.toLocaleString()
+              ? currentCountry.population.toLocaleString()
+              : ''
+          }}
+        </div>
+        <div>
+          <strong>Latitude & Longitude:</strong>
+          {{ currentCountry.latlng ? currentCountry.latlng.join(', ') : '' }}
+        </div>
         <div>
           <strong>Currency:</strong>
           <span v-for="(currency, code) in currentCountry.currencies" :key="code">
-            {{ currency.name }} ({{ code }})
+            {{ currency.name ? currency.name : '' }} ({{ code ? code : '' }})
           </span>
         </div>
         <div>
           <strong>Languages:</strong>
           <span v-for="(language, code) in currentCountry.languages" :key="code">
-            {{ language }}
+            {{ language ? language : '' }}
             <span
               v-if="
                 Object.keys(currentCountry.languages).indexOf(code) <
@@ -31,7 +52,10 @@
           </span>
         </div>
         <div><strong>UN Membership:</strong> {{ currentCountry.unMember ? 'Yes' : 'No' }}</div>
-        <div><strong>Border Countries:</strong> {{ currentCountry.borders.join(', ') }}</div>
+        <div>
+          <strong>Border Countries:</strong>
+          {{ currentCountry.borders ? currentCountry.borders.join(', ') : '' }}
+        </div>
         <!-- Add more country information here -->
       </div>
     </div>
@@ -70,13 +94,19 @@ defineProps({
 .modal-content {
   /* Add your modal content styles */
 }
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* Space between header and content */
+}
 
 .close {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 5px;
+  right: 15px;
   cursor: pointer;
-  font-size: 24px; /* Adjust close button size */
+  font-size: 28px; /* Adjust close button size */
   color: #555; /* Close button color */
 }
 </style>
