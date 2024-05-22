@@ -12,10 +12,7 @@ const searchValueQuery = ref('')
 const handleSearchQuery = ({ searchType, searchValue }) => {
   console.log('handlesearch', searchType, searchValue)
   searchTypeQuery.value = searchType
-  if (!searchValue) {
-    return
-  }
-  searchValueQuery.value = searchValue
+  searchValueQuery.value = searchValue || 'all'
 }
 </script>
 

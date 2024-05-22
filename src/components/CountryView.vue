@@ -16,7 +16,11 @@ onMounted(() => {
   countryStore.fetchCountries()
 })
 watch([() => props.searchType, () => props.searchValue], () => {
-  console.log('watch', props.searchType)
+  console.log('watch', props.searchType, props.searchValue)
+  if (props.searchValue === 'all') {
+    countryStore.fetchCountries()
+    return
+  }
   if (props.searchType === 'region') {
     countryStore.fetchCountriesByRegion(props.searchValue)
   } else if (props.searchType === 'country') {
@@ -50,7 +54,7 @@ const noData = computed(() => countryStore.noData)
 
 <template>
   <CountryModal v-if="isOpen" :currentCountry="currentCountry" :closeModal="closeModal" />
-  <div class="grid grid-cols-4 gap-4 max-w-full mt-10 mx-10">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-full mt-10 mx-10 pb-14">
     <div v-if="isLoading" class="flex items-center justify-center h-20">Loading...</div>
 
     <div v-else-if="noData" class="flex items-center justify-center h-20">No data available</div>

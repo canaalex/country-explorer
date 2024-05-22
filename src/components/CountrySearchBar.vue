@@ -13,7 +13,7 @@ const handleSearch = () => {
 <template>
   <div class="flex justify-center mt-10">
     <div
-      class="flex flex-col gap-4 p-4 bg-gray-100 backdrop-blur-sm bg-opacity-40 rounded-lg shadow-md w-1/2 justify-center"
+      class="flex flex-col gap-4 p-4 bg-gray-100 backdrop-blur-sm bg-opacity-40 rounded-lg shadow-md w-full mx-5 md:mx-0 md:w-1/2 justify-center"
     >
       <div class="flex gap-2 items-center">
         <input
@@ -23,7 +23,7 @@ const handleSearch = () => {
           placeholder="Search..."
         />
         <button
-          class="h-10 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none"
+          class="h-10 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none"
           @click="handleSearch"
         >
           Search

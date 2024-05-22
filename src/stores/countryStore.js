@@ -41,6 +41,8 @@ export const useCountryStore = defineStore('countries', () => {
       noData.value = countries.value.length === 0
     } catch (error) {
       console.error('Error fetching countries by name:', error)
+      countries.value = []
+      noData.value = true
     } finally {
       isLoading.value = false
     }
