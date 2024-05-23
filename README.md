@@ -8,7 +8,7 @@ Welcome to Country Explorer 🎉, a web application designed to help users explo
 
 * 🌎 List of countries: Shows a list of countries for a user to explore.
   
-  <img width="1430" alt="Screenshot 2024-05-23 at 12 27 00" src="https://github.com/canaalex/country-explorer/assets/62827365/b2683587-3bd5-4992-9a3b-a465a0e69ca3">
+  <img width="1394" alt="Screenshot 2024-05-23 at 12 28 26" src="https://github.com/canaalex/country-explorer/assets/62827365/ee9afdba-e7ea-4142-a61d-0311e2564edb">
 
 * 🔍 Search by Country Name or Region: Easily find countries by typing their names or get countries by entering the region name.
   
