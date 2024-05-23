@@ -1,9 +1,8 @@
 <script setup>
 import { useCountryStore } from '@/stores/countryStore'
-import { onMounted, computed, ref } from 'vue'
+import { onMounted, computed, ref, defineProps, watch } from 'vue'
 import CountryCard from '../components/CountryCard.vue'
 import CountryModal from '../components/CountryModal.vue'
-import { defineProps, watch } from 'vue'
 import Loader from '../assets/loader.vue'
 import Nodata from '../assets/nodata.vue'
 
