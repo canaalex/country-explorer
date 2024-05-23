@@ -1,17 +1,21 @@
 # 🌍Country Explorer
 Welcome to Country Explorer 🎉, a web application designed to help users explore detailed information about countries around the world. This project leverages the REST Countries API to provide users with comprehensive data on various countries, including their languages, currencies, population, and more.
+
 <img width="1401" alt="Screenshot 2024-05-23 at 12 24 41" src="https://github.com/canaalex/country-explorer/assets/62827365/afe00da6-3e94-415e-9afa-1906a185de33">
 
 
 ## ✨ Features
 
 * 🌎 List of countries: Shows a list of countries for a user to explore.
-  <img width="1406" alt="Screenshot 2024-05-23 at 12 25 11" src="https://github.com/canaalex/country-explorer/assets/62827365/ddf73f87-2388-47fa-8c76-1a359cd0b143">
   
+  <img width="1430" alt="Screenshot 2024-05-23 at 12 27 00" src="https://github.com/canaalex/country-explorer/assets/62827365/b2683587-3bd5-4992-9a3b-a465a0e69ca3">
+
 * 🔍 Search by Country Name or Region: Easily find countries by typing their names or get countries by entering the region name.
+  
   <img width="780" alt="Screenshot 2024-05-23 at 12 25 33" src="https://github.com/canaalex/country-explorer/assets/62827365/59ccfac7-d98c-421d-bc68-3e95f331aade">
 
 * 📊 Country Details: View detailed information about each country, including its capital, population, languages, currencies, and more by clicking on the country card.
+  
   <img width="391" alt="Screenshot 2024-05-23 at 12 25 56" src="https://github.com/canaalex/country-explorer/assets/62827365/3eecdde9-3868-420d-9c8b-619f617148a5">
 
 * 📱 Responsive Design: Enjoy a seamless experience on both desktop and mobile devices.
