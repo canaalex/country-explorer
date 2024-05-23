@@ -1,5 +1,6 @@
 # 🌍Country Explorer
 Welcome to Country Explorer 🎉, a web application designed to help users explore detailed information about countries around the world. This project leverages the REST Countries API to provide users with comprehensive data on various countries, including their languages, currencies, population, and more.
+![Uploading Screenshot 2024-05-23 at 12.23.29.png…]()
 
 ## ✨ Features
 
