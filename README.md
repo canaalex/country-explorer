@@ -3,11 +3,11 @@ Welcome to Country Explorer 🎉, a web application designed to help users explo
 
 ## ✨ Features
 
-🌎 List of countries: Shows a list of countries for a user to explore.
-🔍 Search by Country Name or Region: Easily find countries by typing their names or get countries by entering the region name.
-📊 Country Details: View detailed information about each country, including its capital, population, languages, currencies, and more by clicking on the country card.
-📱 Responsive Design: Enjoy a seamless experience on both desktop and mobile devices.
-⏳ Loading and Error Handling: Informative loading indicators and error messages ensure a smooth user experience.
+* 🌎 List of countries: Shows a list of countries for a user to explore.
+* 🔍 Search by Country Name or Region: Easily find countries by typing their names or get countries by entering the region name.
+* 📊 Country Details: View detailed information about each country, including its capital, population, languages, currencies, and more by clicking on the country card.
+* 📱 Responsive Design: Enjoy a seamless experience on both desktop and mobile devices.
+* ⏳ Loading and Error Handling: Informative loading indicators and error messages ensure a smooth user experience.
 
 ## 🛠️ Technologies Used
 🖥️ Vue.js: A progressive JavaScript framework for building user interfaces.
