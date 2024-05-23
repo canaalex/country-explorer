@@ -52,4 +52,3 @@ const handleSearch = () => {
     </div>
   </div>
 </template>
-<style scoped></style>

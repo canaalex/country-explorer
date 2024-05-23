@@ -8,10 +8,14 @@ defineProps({
   },
   setCurrentCountry: Function
 })
+
+//Function to truncate a string according to length passed
 const truncate = (str, length) => {
   if (!str) return ''
   return str.length > length ? str.substring(0, length) + '...' : str
 }
+
+//Function to format items by joining elements with a comma operator
 const formatItems = (items) => {
   return Object.entries(items)
     .map(([code, item]) => {
@@ -53,5 +57,3 @@ const formatItems = (items) => {
     </div>
   </div>
 </template>
-
-<style scoped></style>

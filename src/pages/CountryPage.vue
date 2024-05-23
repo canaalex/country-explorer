@@ -1,9 +1,11 @@
 <script setup>
 import { useCountryStore } from '@/stores/countryStore'
 import { onMounted, computed, ref } from 'vue'
-import CountryCard from './CountryCard.vue'
-import CountryModal from './CountryModal.vue'
+import CountryCard from '../components/CountryCard.vue'
+import CountryModal from '../components/CountryModal.vue'
 import { defineProps, watch } from 'vue'
+import Loader from '../assets/loader.vue'
+import Nodata from '../assets/nodata.vue'
 
 const props = defineProps({
   searchType: String,
@@ -11,12 +13,20 @@ const props = defineProps({
 })
 
 const countryStore = useCountryStore()
+const currentCountry = ref(null)
+const isOpen = ref(false)
+
+const countries = computed(() => {
+  return countryStore.countries
+})
+const isLoading = computed(() => countryStore.isLoading)
+const noData = computed(() => countryStore.noData)
 
 onMounted(() => {
   countryStore.fetchCountries()
 })
+
 watch([() => props.searchType, () => props.searchValue], () => {
-  console.log('watch', props.searchType, props.searchValue)
   if (props.searchValue === 'all') {
     countryStore.fetchCountries()
     return
@@ -24,13 +34,10 @@ watch([() => props.searchType, () => props.searchValue], () => {
   if (props.searchType === 'region') {
     countryStore.fetchCountriesByRegion(props.searchValue)
   } else if (props.searchType === 'country') {
-    console.log('hii')
     countryStore.fetchCountryByName(props.searchValue)
   }
 })
 
-const currentCountry = ref(null)
-const isOpen = ref(false)
 const openModal = () => {
   isOpen.value = true
 }
@@ -42,25 +49,20 @@ const closeModal = () => {
 const setCurrentCountry = (country) => {
   currentCountry.value = country
   openModal()
-  console.log('countrycurrent', country)
 }
-const countries = computed(() => {
-  return countryStore.countries
-  console.log('check', countryStore.countries)
-})
-const isLoading = computed(() => countryStore.isLoading)
-const noData = computed(() => countryStore.noData)
 </script>
 
 <template>
   <CountryModal v-if="isOpen" :currentCountry="currentCountry" :closeModal="closeModal" />
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-full mt-10 mx-10 pb-14">
-    <div v-if="isLoading" class="flex items-center justify-center h-20">Loading...</div>
-
-    <div v-else-if="noData" class="flex items-center justify-center h-20">No data available</div>
-
-    <div v-else v-for="country in countries">
-      <CountryCard :country="country" :setCurrentCountry="setCurrentCountry" />
+  <div class="mt-14">
+    <div v-if="isLoading" class="flex items-center justify-center"><Loader /></div>
+    <div v-else-if="noData" class="flex items-center justify-center">
+      <Nodata />
+    </div>
+    <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-full mx-10 pb-14">
+      <div v-for="country in countries">
+        <CountryCard :country="country" :setCurrentCountry="setCurrentCountry" />
+      </div>
     </div>
   </div>
 </template>

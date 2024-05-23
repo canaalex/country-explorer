@@ -1,16 +1,13 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 import { ref } from 'vue'
 import Header from './components/Header.vue'
-import CountryView from './components/CountryView.vue'
+import CountryView from './pages/CountryPage.vue'
 import CountrySearchBar from './components/CountrySearchBar.vue'
 
 const searchTypeQuery = ref('')
 const searchValueQuery = ref('')
 
 const handleSearchQuery = ({ searchType, searchValue }) => {
-  console.log('handlesearch', searchType, searchValue)
   searchTypeQuery.value = searchType
   searchValueQuery.value = searchValue || 'all'
 }
@@ -22,20 +19,4 @@ const handleSearchQuery = ({ searchType, searchValue }) => {
     <CountrySearchBar @search="handleSearchQuery" />
     <CountryView :searchType="searchTypeQuery" :searchValue="searchValueQuery" />
   </div>
-
-  <!-- <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView /> -->
 </template>
-<style scoped></style>

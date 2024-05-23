@@ -32,9 +32,9 @@ export const useCountryStore = defineStore('countries', () => {
       isLoading.value = false
     }
   }
+
   const fetchCountryByName = async (country) => {
     try {
-      console.log('chhhhhh')
       isLoading.value = true
       const getcountries = await axios.get(`https://restcountries.com/v3.1/name/${country}`)
       countries.value = getcountries.data.slice(0, 20)

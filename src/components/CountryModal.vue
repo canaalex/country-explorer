@@ -1,3 +1,10 @@
+<script setup>
+defineProps({
+  currentCountry: Object,
+  closeModal: Function
+})
+</script>
+
 <template>
   <div
     class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center text-black"
@@ -75,12 +82,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-defineProps({
-  currentCountry: Object,
-  closeModal: Function
-})
-</script>
-
-<style scoped></style>
