@@ -34,16 +34,12 @@ Welcome to Country Explorer 🎉, a web application designed to help users explo
 * Click on a country card to view detailed information.
 * Use the modal to explore more about each country and close it when done.
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
 ## 📦 Installation
 
 ### Clone the repository:
 
 ```sh
-git clone https://github.com/your-username/country-explorer.git
+git clone https://github.com/canaalex/country-explorer.git
 cd country-explorer
 ```
 ### Install the dependencies:
@@ -60,31 +56,17 @@ npm run dev
 
 ### Open your browser and navigate to http://localhost:3000 to see the app in action.
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
 ### Compile and Minify for Production
 
 ```sh
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## Recommended IDE Setup
 
-```sh
-npm run lint
-```
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vitejs.dev/config/).
 
